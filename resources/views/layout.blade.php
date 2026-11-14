@@ -81,6 +81,16 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Contact Us</a>
           </li>
+          @auth
+<li class="nav-item">
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit" class="nav-link btn btn-link text-white">
+            Logout
+        </button>
+    </form>
+</li>
+@endauth
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
